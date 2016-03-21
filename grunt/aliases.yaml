@@ -1,0 +1,29 @@
+default:
+- 'build'
+
+serve:
+- 'template'
+- 'copy:frontend'
+- 'less'
+- 'exec:start_api'
+- 'connect:frontend'
+- 'clean:dev'
+- 'watch'
+
+docs:
+- 'apidoc'
+- 'ngdocs'
+
+test:
+- 'jasmine:client'
+- 'jasmine_node:api'
+
+build:
+- 'template'
+- 'copy:frontend'
+- 'less'
+- 'requirejs'
+- 'concat:js'
+- 'concat:jqueryUI'
+- 'toggleComments'
+#- 'clean:prod'
